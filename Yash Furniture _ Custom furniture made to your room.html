@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yash Furniture | Custom furniture made to your room</title>
+<meta name="description" content="Yash Furniture builds custom sofas, beds, wardrobes, dining tables and more, made to the size of your room. Call 9215524934 or 9896224934.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+
+  --teak-950: #1c120c;
+  --teak-900: #24180f;
+  --teak-700: #4a3626;
+  --brass: #c19a52;
+  --brass-deep: #8f6c2c;
+  --sage: #3f4a3c;
+  --bone: #eceae4;
+
+  --alt-bg: #eceae4;
+  --alt-bg-2: #e0ddd3;
+  --alt-fg: #1f1712;
+  --alt-muted: #5e554c;
+  --alt-line: #cbc6ba;
+  --alt-brass: #8f6c2c;
+
+  --display: "Young Serif", Georgia, "Times New Roman", serif;
+  --body: "Hanken Grotesk", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --alt-bg: #1a120d;
+    --alt-bg-2: #231911;
+    --alt-fg: #ece6da;
+    --alt-muted: #b6ab9c;
+    --alt-line: #3a2d24;
+    --alt-brass: #c9a35c;
+  }
+}
+:root[data-theme="dark"] {
+  --alt-bg: #1a120d;
+  --alt-bg-2: #231911;
+  --alt-fg: #ece6da;
+  --alt-muted: #b6ab9c;
+  --alt-line: #3a2d24;
+  --alt-brass: #c9a35c;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0;
+  background: var(--teak-900);
+  color: var(--bone);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: rgba(28, 18, 12, 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(193, 154, 82, 0.22);
+}
+.site-header .bar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.brand span { color: var(--brass); }
+.nav { display: flex; align-items: center; gap: 1.75rem; }
+.nav a.link { text-decoration: none; font-weight: 500; font-size: 0.97rem; opacity: 0.85; }
+.nav a.link:hover { opacity: 1; text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--brass); }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-brass { background: var(--brass); color: #20150c; }
+.btn-brass:hover { background: #d3ac63; }
+.btn-line { border-color: rgba(236, 234, 228, 0.5); color: var(--bone); background: transparent; }
+.btn-line:hover { border-color: var(--brass); color: var(--brass); }
+.btn-sm { min-height: 40px; padding: 0.4rem 1.05rem; font-size: 0.95rem; }
+
+/* ---------- hero ---------- */
+.hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4.5rem) 1.25rem clamp(3rem, 7vw, 5.5rem);
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+.mark { margin: 0; font-family: var(--display); font-weight: 400; line-height: 0.86; }
+.mark .grain {
+  display: block;
+  font-size: clamp(6rem, 19vw, 14.5rem);
+  letter-spacing: -0.02em;
+  color: #a07650;
+  background-color: #a07650;
+  background-size: 900px 500px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.06em;
+}
+.mark .sub {
+  display: block;
+  font-size: clamp(2.2rem, 7.2vw, 5.4rem);
+  color: var(--bone);
+  margin-top: 0.05em;
+}
+.hero-copy .lead {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.4;
+  max-width: 24ch;
+  margin: 1.6rem 0 0.4rem;
+}
+.hero-copy .hindi {
+  font-size: 1.1rem;
+  color: rgba(236, 234, 228, 0.72);
+  margin: 0 0 1.8rem;
+  max-width: 34ch;
+}
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.second-number { margin: 1rem 0 0; font-size: 0.97rem; color: rgba(236, 234, 228, 0.75); }
+.second-number a { color: var(--brass); font-weight: 600; }
+
+.stage {
+  background:
+    linear-gradient(to bottom, transparent 72%, rgba(0,0,0,0.22) 72%),
+    var(--sage);
+  border-radius: 30px;
+  padding: 1.5rem 1.25rem 1.1rem;
+  border: 1px solid rgba(193, 154, 82, 0.3);
+}
+.chair { display: block; width: 100%; height: auto; }
+.chair .frame { fill: var(--frame, #5a3c28); }
+.chair .fabric { fill: #dcd7ca; }
+.chair .part { stroke: var(--brass); stroke-width: 2; }
+.chair .seam { fill: none; stroke: rgba(143, 108, 44, 0.55); stroke-width: 1.5; stroke-linecap: round; }
+.chair .cap { fill: var(--brass); }
+.chair .draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  fill-opacity: 0;
+  animation:
+    draw 1.3s ease-out var(--d, 0s) forwards,
+    fillin 0.7s ease-out calc(var(--d, 0s) + 0.95s) forwards;
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fillin { to { fill-opacity: 1; } }
+.chair .frame { transition: fill 0.35s ease; }
+
+.picker { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.6rem; }
+.picker-label { margin: 0; font-size: 0.95rem; color: rgba(236, 234, 228, 0.85); }
+.picker-label strong { color: var(--bone); font-weight: 600; }
+.swatches { display: flex; gap: 0.6rem; }
+.swatch {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(236, 234, 228, 0.35);
+  padding: 0;
+  cursor: pointer;
+  background-size: cover;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.swatch:hover { transform: scale(1.06); }
+.swatch[aria-pressed="true"] { border-color: var(--brass); box-shadow: 0 0 0 3px rgba(193, 154, 82, 0.4); }
+
+/* ---------- light sections ---------- */
+.band { background: var(--alt-bg); color: var(--alt-fg); }
+.band.alt { background: var(--alt-bg-2); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: clamp(3rem, 7vw, 5.5rem) 1.25rem; }
+.band h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  line-height: 1.12;
+  margin: 0 0 0.8rem;
+  max-width: 20ch;
+}
+.band .intro { color: var(--alt-muted); max-width: 52ch; margin: 0 0 2.4rem; }
+
+.catalog { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(2rem, 6vw, 5rem); }
+.catalog li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--alt-line);
+}
+.catalog .ico { width: 40px; height: 40px; color: var(--alt-brass); }
+.catalog h3 { margin: 0 0 0.15rem; font-size: 1.15rem; font-weight: 600; }
+.catalog p { margin: 0; color: var(--alt-muted); font-size: 1rem; line-height: 1.5; }
+.catalog li.ask h3 { color: var(--alt-brass); }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: s; }
+.steps li { position: relative; padding: 2.4rem 1.4rem 0 0; border-top: 2px solid var(--alt-brass); counter-increment: s; }
+.steps li::before {
+  content: counter(s);
+  position: absolute;
+  top: -1.05rem;
+  left: 0;
+  width: 2rem; height: 2rem;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--alt-brass);
+  color: var(--alt-bg-2);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.steps h3 { font-family: var(--display); font-weight: 400; font-size: 1.4rem; margin: 0 0 0.35rem; }
+.steps p { margin: 0; color: var(--alt-muted); font-size: 1rem; }
+
+/* ---------- contact ---------- */
+.contact { background: var(--teak-950); border-top: 1px solid rgba(193, 154, 82, 0.25); }
+.contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); }
+.contact h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  line-height: 1.12;
+  margin: 0 0 1.4rem;
+}
+.phone-list { display: grid; gap: 0.9rem; margin-bottom: 1.6rem; }
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(193, 154, 82, 0.35);
+  border-radius: 16px;
+}
+.phone .num {
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  font-variant-numeric: lining-nums;
+}
+.phone .num:hover { color: var(--brass); }
+.phone .acts { display: flex; gap: 0.5rem; }
+.shop {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.1rem 1.2rem;
+  background: var(--sage);
+  border-radius: 16px;
+}
+.shop svg.pin { width: 34px; height: 34px; color: var(--brass); flex: none; }
+.shop .t { flex: 1 1 14rem; }
+.shop strong { display: block; font-size: 1.1rem; }
+.shop span { color: rgba(236, 234, 228, 0.8); font-size: 0.97rem; }
+
+.enquiry {
+  background: rgba(236, 234, 228, 0.05);
+  border: 1px solid rgba(236, 234, 228, 0.14);
+  border-radius: 20px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+.enquiry h3 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; margin: 0 0 0.3rem; }
+.enquiry .hint { margin: 0 0 1.2rem; color: rgba(236, 234, 228, 0.7); font-size: 0.98rem; }
+.field { display: grid; gap: 0.35rem; margin-bottom: 1rem; }
+.field label { font-weight: 500; font-size: 0.97rem; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--bone);
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(236, 234, 228, 0.28);
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  min-height: 48px;
+}
+.field textarea { min-height: 96px; resize: vertical; }
+.field select option { color: #1f1712; }
+.field input::placeholder, .field textarea::placeholder { color: rgba(236, 234, 228, 0.45); }
+.enquiry .btn { width: 100%; }
+
+.site-footer { background: var(--teak-950); border-top: 1px solid rgba(236, 234, 228, 0.1); }
+.site-footer .wrap { padding-top: 1.6rem; padding-bottom: 1.6rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.6rem; font-size: 0.95rem; color: rgba(236, 234, 228, 0.65); }
+.site-footer .wrap { display: flex; grid-template-columns: none; }
+
+/* ---------- motion and hover ---------- */
+.mark .grain { animation: drift 70s linear infinite; }
+@keyframes drift { to { background-position: 900px 0; } }
+.stage { perspective: 900px; }
+.chair { transition: transform 0.25s ease-out; will-change: transform; }
+
+.btn { transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.25s, box-shadow 0.25s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28); }
+.btn-brass { position: relative; overflow: hidden; }
+.btn-brass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+.btn-brass:hover::after { transform: translateX(120%); }
+
+.site-header .bar { transition: padding 0.3s ease; }
+.site-header.scrolled .bar { padding-top: 0.45rem; padding-bottom: 0.45rem; }
+.site-header.scrolled { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); }
+
+.marquee { overflow: hidden; background: var(--teak-950); border-top: 1px solid rgba(193, 154, 82, 0.3); border-bottom: 1px solid rgba(193, 154, 82, 0.3); }
+.marquee .track { display: flex; width: max-content; animation: marquee 46s linear infinite; }
+.marquee:hover .track { animation-play-state: paused; }
+.marquee span { font-family: var(--display); font-size: clamp(1.3rem, 3vw, 1.9rem); padding: 1rem 0; display: flex; align-items: center; white-space: nowrap; color: rgba(236, 234, 228, 0.9); }
+.marquee span::after { content: ""; width: 9px; height: 9px; margin: 0 2rem; background: var(--brass); transform: rotate(45deg); flex: none; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.catalog li { position: relative; }
+.catalog li::before { content: ""; position: absolute; top: -1px; left: 0; width: 100%; height: 2px; background: var(--alt-brass); transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease; }
+.catalog li:hover::before { transform: scaleX(1); }
+.catalog .ico { transition: transform 0.35s ease; }
+.catalog li:hover .ico { transform: translateY(-4px) rotate(-7deg); }
+.catalog h3 { transition: color 0.25s; }
+.catalog li:hover h3 { color: var(--alt-brass); }
+.steps li::before { transition: transform 0.3s ease; }
+.steps li:hover::before { transform: scale(1.18); }
+.steps h3 { transition: color 0.25s; }
+.steps li:hover h3 { color: var(--alt-brass); }
+.phone { transition: border-color 0.25s, background-color 0.25s; }
+.phone:hover { border-color: var(--brass); background: rgba(193, 154, 82, 0.08); }
+
+.gallery { background: var(--teak-900); }
+.gallery .wrap { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); }
+.gallery h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.12; margin: 0 0 0.8rem; max-width: 20ch; }
+.gallery .intro { color: rgba(236, 234, 228, 0.72); max-width: 52ch; margin: 0 0 2.4rem; }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.tile { position: relative; overflow: hidden; margin: 0; border-radius: 20px; height: clamp(230px, 26vw, 330px); border: 1px solid rgba(193, 154, 82, 0.28); background: #000; }
+.tile svg { display: block; width: 100%; height: 100%; max-width: none; transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.tile:hover svg { transform: scale(1.09); }
+.tile::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 236, 196, 0.28), transparent 45%); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+.tile:hover::after { opacity: 1; }
+.tile figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 2.4rem 1.1rem 1rem; background: linear-gradient(to top, rgba(20, 12, 8, 0.9), transparent); font-family: var(--display); font-size: 1.25rem; transform: translateY(42%); transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.tile figcaption small { display: block; font-family: var(--body); font-size: 0.92rem; color: var(--brass); opacity: 0; transition: opacity 0.4s 0.05s; }
+.tile:hover figcaption { transform: none; }
+.tile:hover figcaption small { opacity: 1; }
+.scene .w { fill: var(--wall); }
+.scene .fl { fill: var(--floor); }
+.scene .sh { fill: rgba(0, 0, 0, 0.18); }
+.scene .fb { fill: var(--fab); }
+@media (hover: none) {
+  .tile figcaption { transform: none; }
+  .tile figcaption small { opacity: 1; }
+}
+@media (max-width: 900px) { .tiles { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .tiles { grid-template-columns: 1fr; } }
+
+.js .rv { opacity: 0; transform: translateY(26px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--rd, 0s); }
+.js .rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .mark .grain, .marquee .track { animation: none; }
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  .tile svg, .tile figcaption, .btn { transition: none; }
+}
+
+/* mobile call bar */
+.mobile-bar { display: none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .contact .wrap { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 2.6rem; }
+}
+@media (max-width: 720px) {
+  .nav a.link { display: none; }
+  .catalog { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .steps li { padding-right: 0; }
+  .mobile-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    padding: 0.6rem 0.9rem calc(0.6rem + env(safe-area-inset-bottom, 0px));
+    background: rgba(28, 18, 12, 0.96);
+    border-top: 1px solid rgba(193, 154, 82, 0.3);
+    z-index: 30;
+  }
+  body { padding-bottom: 76px; }
+  .site-header .btn { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .chair .draw { animation: none; stroke-dashoffset: 0; fill-opacity: 1; }
+  .chair .frame, .swatch { transition: none; }
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#top">Yash <span>Furniture</span></a>
+    <nav class="nav" aria-label="Main">
+      <a class="link" href="#furniture">Furniture</a>
+      <a class="link" href="#gallery">Gallery</a>
+      <a class="link" href="#process">How it works</a>
+      <a class="link" href="#contact">Contact</a>
+      <a class="btn btn-brass btn-sm" href="tel:+919215524934">Call now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="site-title">
+    <div class="hero-copy">
+      <h1 class="mark" id="site-title">
+        <span class="grain" id="markGrain">Yash</span>
+        <span class="sub">Furniture</span>
+      </h1>
+      <p class="lead">Custom furniture, built to the size of your room.</p>
+      <p class="hindi" lang="hi">आपके कमरे के नाप का फर्नीचर, आपकी पसंद के रंग और डिज़ाइन में।</p>
+      <div class="cta-row">
+        <a class="btn btn-brass" href="tel:+919215524934">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call 9215524934
+        </a>
+        <a class="btn btn-line" href="https://maps.app.goo.gl/1GBYmttyd3rYgG1x6" target="_blank" rel="noopener">Find our shop</a>
+      </div>
+      <p class="second-number">Second number: <a href="tel:+919896224934">9896224934</a></p>
+    </div>
+
+    <div class="stage">
+      <svg class="chair" viewBox="0 0 420 360" role="img" aria-label="Armchair drawing that changes colour with the wood finish you pick">
+        <ellipse cx="210" cy="338" rx="172" ry="11" fill="rgba(0,0,0,0.28)"/>
+        <rect class="draw fabric part" pathLength="1" style="--d:0s"   x="105" y="40"  width="210" height="156" rx="28"/>
+        <rect class="draw frame part"  pathLength="1" style="--d:0.2s" x="48"  y="116" width="58"  height="152" rx="20"/>
+        <rect class="draw frame part"  pathLength="1" style="--d:0.3s" x="314" y="116" width="58"  height="152" rx="20"/>
+        <rect class="draw frame part"  pathLength="1" style="--d:0.45s" x="48" y="258" width="324" height="24"  rx="6"/>
+        <path class="draw frame part"  pathLength="1" style="--d:0.6s" d="M68 282h24l-6 50H74z"/>
+        <path class="draw frame part"  pathLength="1" style="--d:0.7s" d="M328 282h24l-6 50h-12z"/>
+        <rect class="draw fabric part" pathLength="1" style="--d:0.85s" x="92" y="186" width="236" height="68" rx="20"/>
+        <path class="seam" d="M122 220h176"/>
+        <path class="seam" d="M210 62v108"/>
+        <rect class="cap" x="74" y="332" width="12" height="6" rx="2"/>
+        <rect class="cap" x="334" y="332" width="12" height="6" rx="2"/>
+      </svg>
+      <div class="picker">
+        <p class="picker-label">Pick a finish: <strong id="finishName">Walnut</strong></p>
+        <div class="swatches" id="swatches" role="group" aria-label="Wood finish"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track"><span>Sofas</span><span>Beds</span><span>Wardrobes</span><span>Dining tables</span><span>TV units</span><span>Study desks</span><span>Pooja mandir</span><span>Kitchen cabinets</span><span>Made to order</span></div></div>
+
+  <section class="band" id="furniture" aria-labelledby="h-furniture">
+    <div class="wrap">
+      <h2 id="h-furniture">Made for your room, not picked from a catalogue</h2>
+      <p class="intro">Tell us the size, the wood and the finish you want. We build it to fit, down to the last inch.</p>
+      <ul class="catalog">
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13V9.5A2.5 2.5 0 0 1 7.5 7h9A2.5 2.5 0 0 1 19 9.5V13"/><path d="M3 13h18v5H3z"/><path d="M6 18v2M18 18v2"/></svg>
+          <div><h3>Sofas and chairs</h3><p>Fabric, leather or cane, sized to the space you have.</p></div>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19V6M3 15h18v4M21 19v-4"/><path d="M6 12h5v3H6zM13 12h5a3 3 0 0 1 3 3"/></svg>
+          <div><h3>Beds</h3><p>Storage beds, headboards, kids' beds and bunk beds.</p></div>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="17" rx="1.5"/><path d="M12 3v17M10 11v2M14 11v2M7 20v1.5M17 20v1.5"/></svg>
+          <div><h3>Wardrobes</h3><p>Sliding or hinged doors, with shelves planned around your clothes.</p></div>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18M6 9v10M18 9v10M9 9v4M15 9v4"/></svg>
+          <div><h3>Dining tables</h3><p>From a table for two to a long one for ten.</p></div>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="11" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
+          <div><h3>TV units and wall panels</h3><p>Cabinets and panelling with space for wires, boxes and speakers.</p></div>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M5 10v9M19 10v9M13 10v5h6"/></svg>
+          <div><h3>Study and office desks</h3><p>Desks with drawers, shelves and cable space built in.</p></div>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 5v2H5V8z"/><path d="M6 10v10M18 10v10M4 20h16M9 20v-6h6v6"/></svg>
+          <div><h3>Pooja mandir</h3><p>Wall-mounted or standing units in the wood and finish you choose.</p></div>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18v6H3zM3 14h18v6H3z"/><path d="M12 4v6M12 14v6"/></svg>
+          <div><h3>Kitchen cabinets</h3><p>Cabinets and storage planned around how you cook.</p></div>
+        </li>
+        <li class="ask">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+          <div><h3>Something else?</h3><p>Send a photo or a rough sketch and we will quote it.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery" aria-labelledby="h-gallery">
+    <div class="wrap">
+      <h2 id="h-gallery">A look at what we build</h2>
+      <p class="intro">Every piece is made to order, in the wood, fabric and finish you choose.</p>
+      <div class="tiles">
+
+        <figure class="tile" style="--wall:#d9d2c4;--floor:#8a6444;--fab:#3f5a52">
+          <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a custom sofa in a living room">
+            <rect class="w" width="400" height="215"/><rect class="fl" y="215" width="400" height="85"/><rect class="sh" y="215" width="400" height="5"/>
+            <rect x="150" y="38" width="100" height="72" fill="#2b2018"/><rect x="158" y="46" width="84" height="56" fill="#c8ad78"/><circle cx="200" cy="74" r="17" fill="#3f5a52"/>
+            <path d="M330 205V78" stroke="#2b2018" stroke-width="3"/><path d="M316 78h28l-6-26h-16z" fill="#c19a52"/>
+            <ellipse cx="200" cy="262" rx="150" ry="20" fill="#b9a98a"/>
+            <rect class="fb" x="76" y="116" width="248" height="76" rx="20"/>
+            <rect class="fb" x="58" y="140" width="42" height="76" rx="16"/><rect class="fb" x="300" y="140" width="42" height="76" rx="16"/>
+            <rect x="86" y="168" width="228" height="48" rx="12" fill="#4c6a61"/>
+            <path d="M162 172v40M238 172v40" stroke="#2f443d" stroke-width="2"/>
+            <rect x="78" y="216" width="8" height="14" fill="#5a3c28"/><rect x="314" y="216" width="8" height="14" fill="#5a3c28"/>
+            <g transform="rotate(-8 125 158)"><rect x="106" y="138" width="40" height="38" rx="8" fill="#c19a52"/></g>
+            <g transform="rotate(8 275 158)"><rect x="256" y="140" width="38" height="36" rx="8" fill="#e8e3d8"/></g>
+          </svg>
+          <figcaption>Sofas and chairs<small>Sized to your room</small></figcaption>
+        </figure>
+
+        <figure class="tile" style="--wall:#cfc3b0;--floor:#6f4f38">
+          <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a custom bed with headboard">
+            <rect class="w" width="400" height="215"/><rect class="fl" y="215" width="400" height="85"/><rect class="sh" y="215" width="400" height="5"/>
+            <rect x="85" y="58" width="230" height="122" rx="10" fill="#8b5a36"/>
+            <rect x="100" y="74" width="95" height="92" rx="4" fill="#6e4528"/><rect x="205" y="74" width="95" height="92" rx="4" fill="#6e4528"/>
+            <rect x="80" y="165" width="240" height="58" rx="8" fill="#e8e3d8"/>
+            <rect x="100" y="146" width="90" height="34" rx="12" fill="#f3efe6" stroke="#cbc4b4"/><rect x="210" y="146" width="90" height="34" rx="12" fill="#f3efe6" stroke="#cbc4b4"/>
+            <rect x="80" y="188" width="240" height="36" rx="6" fill="#3f4a3c"/><rect x="80" y="188" width="240" height="9" fill="#55634f"/>
+            <rect x="72" y="220" width="256" height="16" rx="4" fill="#5a3c28"/>
+            <rect x="80" y="236" width="10" height="12" fill="#5a3c28"/><rect x="310" y="236" width="10" height="12" fill="#5a3c28"/>
+            <rect x="30" y="172" width="38" height="50" rx="3" fill="#8b5a36"/><rect x="332" y="172" width="38" height="50" rx="3" fill="#8b5a36"/>
+            <path d="M36 190h26M338 190h26" stroke="#c19a52" stroke-width="3"/>
+            <circle cx="49" cy="160" r="9" fill="#c19a52"/><circle cx="351" cy="160" r="9" fill="#c19a52"/>
+          </svg>
+          <figcaption>Beds<small>Storage, headboards, kids' beds</small></figcaption>
+        </figure>
+
+        <figure class="tile" style="--wall:#3f4a3c;--floor:#6f4f38">
+          <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a custom wardrobe">
+            <rect class="w" width="400" height="215"/><rect class="fl" y="215" width="400" height="85"/><rect class="sh" y="215" width="400" height="5"/>
+            <rect x="88" y="26" width="224" height="12" fill="#5a3c28"/>
+            <rect x="95" y="36" width="210" height="182" fill="#8b5a36"/>
+            <rect x="104" y="46" width="92" height="162" fill="#7a4c2c"/><rect x="204" y="46" width="92" height="162" fill="#7a4c2c"/>
+            <rect x="114" y="58" width="72" height="60" fill="none" stroke="#5a3c28" stroke-width="2"/><rect x="214" y="58" width="72" height="60" fill="none" stroke="#5a3c28" stroke-width="2"/>
+            <rect x="114" y="130" width="72" height="68" fill="none" stroke="#5a3c28" stroke-width="2"/><rect x="214" y="130" width="72" height="68" fill="none" stroke="#5a3c28" stroke-width="2"/>
+            <rect x="186" y="110" width="5" height="38" rx="2" fill="#c19a52"/><rect x="209" y="110" width="5" height="38" rx="2" fill="#c19a52"/>
+            <rect x="92" y="216" width="216" height="9" fill="#5a3c28"/>
+            <rect x="334" y="184" width="28" height="34" rx="4" fill="#b9a98a"/>
+            <path d="M348 186C334 156 330 140 340 118C352 140 360 162 348 186z" fill="#6f8c63"/><path d="M348 186C358 166 372 156 378 140C366 148 352 162 348 186z" fill="#587650"/>
+          </svg>
+          <figcaption>Wardrobes<small>Sliding or hinged, planned for your clothes</small></figcaption>
+        </figure>
+
+        <figure class="tile" style="--wall:#d9d2c4;--floor:#7d5c41">
+          <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a custom dining table with chairs">
+            <rect class="w" width="400" height="215"/><rect class="fl" y="215" width="400" height="85"/><rect class="sh" y="215" width="400" height="5"/>
+            <path d="M200 0v52" stroke="#2b2018" stroke-width="2"/><path d="M168 84Q200 36 232 84z" fill="#c19a52"/><ellipse cx="200" cy="98" rx="46" ry="10" fill="#ffe9b8" opacity="0.45"/>
+            <rect x="78" y="150" width="244" height="15" rx="4" fill="#8b5a36"/>
+            <rect x="92" y="165" width="12" height="55" fill="#5a3c28"/><rect x="296" y="165" width="12" height="55" fill="#5a3c28"/>
+            <rect x="36" y="124" width="9" height="60" rx="2" fill="#5a3c28"/><rect x="36" y="176" width="42" height="9" rx="2" fill="#5a3c28"/><rect x="38" y="185" width="6" height="35" fill="#5a3c28"/><rect x="70" y="185" width="6" height="35" fill="#5a3c28"/>
+            <rect x="355" y="124" width="9" height="60" rx="2" fill="#5a3c28"/><rect x="322" y="176" width="42" height="9" rx="2" fill="#5a3c28"/><rect x="324" y="185" width="6" height="35" fill="#5a3c28"/><rect x="356" y="185" width="6" height="35" fill="#5a3c28"/>
+            <path d="M172 150Q200 182 228 150z" fill="#e8e3d8"/>
+            <rect x="262" y="124" width="11" height="26" rx="4" fill="#3f5a52"/><path d="M267 124c-6-16-4-26 0-34M267 124c8-12 14-18 18-22" stroke="#587650" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+          <figcaption>Dining tables<small>From a table for two to ten</small></figcaption>
+        </figure>
+
+        <figure class="tile" style="--wall:#b9b1a2;--floor:#7a5a40">
+          <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a TV unit with a wooden slat wall panel">
+            <defs><pattern id="slat" width="14" height="10" patternUnits="userSpaceOnUse"><rect width="9" height="10" fill="#8b5a36"/><rect x="9" width="5" height="10" fill="#5a3c28"/></pattern></defs>
+            <rect class="w" width="400" height="215"/><rect class="fl" y="215" width="400" height="85"/><rect class="sh" y="215" width="400" height="5"/>
+            <rect x="66" y="26" width="268" height="190" fill="url(#slat)"/>
+            <rect x="116" y="56" width="168" height="96" rx="4" fill="#14100d"/><path d="M116 56h96L150 152h-34z" fill="rgba(255,255,255,0.07)"/>
+            <rect x="86" y="170" width="228" height="42" rx="4" fill="#8b5a36"/>
+            <path d="M162 170v42M238 170v42" stroke="#5a3c28" stroke-width="2"/>
+            <rect x="118" y="186" width="26" height="4" rx="2" fill="#c19a52"/><rect x="187" y="186" width="26" height="4" rx="2" fill="#c19a52"/><rect x="256" y="186" width="26" height="4" rx="2" fill="#c19a52"/>
+            <rect x="96" y="212" width="208" height="6" rx="3" fill="rgba(0,0,0,0.25)"/>
+          </svg>
+          <figcaption>TV units and panels<small>Space for wires, boxes and speakers</small></figcaption>
+        </figure>
+
+        <figure class="tile" style="--wall:#cfd3c6;--floor:#7a5a40">
+          <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a study desk with drawers and a lamp">
+            <rect class="w" width="400" height="215"/><rect class="fl" y="215" width="400" height="85"/><rect class="sh" y="215" width="400" height="5"/>
+            <rect x="40" y="36" width="96" height="108" fill="#e9efe8" stroke="#5a3c28" stroke-width="6"/><path d="M88 36v108M40 90h96" stroke="#5a3c28" stroke-width="4"/>
+            <rect x="118" y="150" width="232" height="13" rx="3" fill="#8b5a36"/>
+            <rect x="128" y="163" width="10" height="57" fill="#5a3c28"/>
+            <rect x="298" y="163" width="46" height="57" fill="#7a4c2c"/><path d="M298 182h46M298 201h46" stroke="#5a3c28" stroke-width="2"/>
+            <rect x="312" y="171" width="18" height="3" rx="1.5" fill="#c19a52"/><rect x="312" y="190" width="18" height="3" rx="1.5" fill="#c19a52"/><rect x="312" y="208" width="18" height="3" rx="1.5" fill="#c19a52"/>
+            <rect x="186" y="126" width="58" height="24" rx="2" fill="#2b2018"/><rect x="176" y="148" width="78" height="4" rx="2" fill="#9a9488"/>
+            <rect x="134" y="146" width="16" height="5" fill="#2b2018"/><path d="M142 146L158 108L184 98" stroke="#2b2018" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M178 92l22 8-5 14-24-8z" fill="#c19a52"/>
+            <rect x="268" y="142" width="40" height="8" fill="#3f5a52"/><rect x="272" y="134" width="32" height="8" fill="#c19a52"/>
+            <rect x="200" y="178" width="54" height="10" rx="4" fill="#3f5a52"/><rect x="206" y="188" width="6" height="32" fill="#2b2018"/><rect x="242" y="188" width="6" height="32" fill="#2b2018"/>
+          </svg>
+          <figcaption>Study desks<small>Drawers, shelves and cable space built in</small></figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="process" aria-labelledby="h-process">
+    <div class="wrap">
+      <h2 id="h-process">From your idea to your living room</h2>
+      <p class="intro">Four steps, and you stay in the loop at every one.</p>
+      <ol class="steps">
+        <li><h3>Measure</h3><p>Tell us what you need. We note the room size and your requirements.</p></li>
+        <li><h3>Design</h3><p>You choose the wood, finish, fabric and fittings. We share the design and the price.</p></li>
+        <li><h3>Build</h3><p>Your piece is made to the agreed design and checked before it leaves.</p></li>
+        <li><h3>Deliver</h3><p>We deliver it and set it up in your home.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <div>
+        <h2 id="h-contact">Talk to us about your furniture</h2>
+        <div class="phone-list">
+          <div class="phone">
+            <a class="num" href="tel:+919215524934">9215524934</a>
+            <div class="acts">
+              <a class="btn btn-brass btn-sm" href="tel:+919215524934">Call</a>
+              <a class="btn btn-line btn-sm" href="https://wa.me/919215524934" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+          <div class="phone">
+            <a class="num" href="tel:+919896224934">9896224934</a>
+            <div class="acts">
+              <a class="btn btn-brass btn-sm" href="tel:+919896224934">Call</a>
+              <a class="btn btn-line btn-sm" href="https://wa.me/919896224934" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <div class="shop">
+          <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <div class="t"><strong>Visit the shop</strong><span>See samples and talk to us in person.</span></div>
+          <a class="btn btn-brass btn-sm" href="https://maps.app.goo.gl/1GBYmttyd3rYgG1x6" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </div>
+
+      <div class="enquiry">
+        <h3>Tell us what you need</h3>
+        <p class="hint">Fill this in and send it to us on WhatsApp.</p>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" autocomplete="name" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="f-type">What do you want made?</label>
+          <select id="f-type">
+            <option>Sofa or chair</option>
+            <option>Bed</option>
+            <option>Wardrobe</option>
+            <option>Dining table</option>
+            <option>TV unit or wall panel</option>
+            <option>Study or office desk</option>
+            <option>Pooja mandir</option>
+            <option>Kitchen cabinets</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Size, wood or any other details</label>
+          <textarea id="f-msg" placeholder="For example: 6 ft bed with storage, dark wood"></textarea>
+        </div>
+        <a class="btn btn-brass" id="waSend" href="https://wa.me/919215524934" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Send on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Yash Furniture. Custom furniture made to order.</span>
+    <span>9215524934 / 9896224934</span>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="btn btn-brass" href="tel:+919215524934">Call now</a>
+  <a class="btn btn-line" href="https://wa.me/919215524934" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+(function () {
+  var finishes = [
+    { name: "Walnut",   frame: "#5a3c28", mark: "#a07650", streak: "#3a2415" },
+    { name: "Teak",     frame: "#a8763a", mark: "#d3a261", streak: "#7a4f22" },
+    { name: "Oak",      frame: "#cfae82", mark: "#e6cda5", streak: "#a98456" },
+    { name: "Wenge",    frame: "#3a2b25", mark: "#8a6c5d", streak: "#2a1d18" },
+    { name: "Sheesham", frame: "#8b4a2e", mark: "#c27a55", streak: "#5e2d18" }
+  ];
+
+  function rgb(hex) {
+    var n = parseInt(hex.slice(1), 16);
+    return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255].map(function (v) { return v.toFixed(3); });
+  }
+  function grain(base, streak) {
+    var c = rgb(streak);
+    var svg = "<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500'>" +
+      "<filter id='g' x='0' y='0' width='100%' height='100%'>" +
+      "<feTurbulence type='fractalNoise' baseFrequency='0.006 0.11' numOctaves='3' seed='7'/>" +
+      "<feColorMatrix values='0 0 0 0 " + c[0] + " 0 0 0 0 " + c[1] + " 0 0 0 0 " + c[2] + " 1.8 0 0 0 -0.7'/>" +
+      "</filter>" +
+      "<rect width='900' height='500' fill='" + base + "'/>" +
+      "<rect width='900' height='500' filter='url(#g)'/></svg>";
+    return 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")';
+  }
+
+  var mark = document.getElementById("markGrain");
+  var chair = document.querySelector(".chair");
+  var label = document.getElementById("finishName");
+  var holder = document.getElementById("swatches");
+  var buttons = [];
+
+  function pick(i) {
+    var f = finishes[i];
+    mark.style.backgroundImage = grain(f.mark, f.streak);
+    chair.style.setProperty("--frame", f.frame);
+    label.textContent = f.name;
+    buttons.forEach(function (b, j) { b.setAttribute("aria-pressed", j === i ? "true" : "false"); });
+  }
+
+  finishes.forEach(function (f, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "swatch";
+    b.setAttribute("aria-label", f.name + " finish");
+    b.setAttribute("aria-pressed", "false");
+    b.style.backgroundImage = grain(f.mark, f.streak);
+    b.addEventListener("click", function () { pick(i); });
+    holder.appendChild(b);
+    buttons.push(b);
+  });
+  pick(0);
+
+  /* WhatsApp enquiry link */
+  var name = document.getElementById("f-name");
+  var type = document.getElementById("f-type");
+  var msg = document.getElementById("f-msg");
+  var send = document.getElementById("waSend");
+  function updateLink() {
+    var text = "Hello Yash Furniture, " +
+      (name.value.trim() ? "my name is " + name.value.trim() + ". " : "") +
+      "I want to get this made: " + type.value + "." +
+      (msg.value.trim() ? " Details: " + msg.value.trim() : "");
+    send.href = "https://wa.me/919215524934?text=" + encodeURIComponent(text);
+  }
+  [name, type, msg].forEach(function (el) {
+    el.addEventListener("input", updateLink);
+    el.addEventListener("change", updateLink);
+  });
+  updateLink();
+
+  /* marquee: duplicate content for a seamless loop */
+  var track = document.querySelector(".marquee .track");
+  if (track) track.innerHTML += track.innerHTML;
+
+  /* header shadow after scrolling */
+  var header = document.querySelector(".site-header");
+  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 30); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* reveal on scroll */
+  var revealEls = document.querySelectorAll(".band h2, .band .intro, .gallery h2, .gallery .intro, .catalog li, .steps li, .tile, .contact h2, .phone, .shop, .enquiry");
+  revealEls.forEach(function (el) {
+    el.classList.add("rv");
+    var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty("--rd", (Math.min(idx, 5) * 0.08) + "s");
+  });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* gallery spotlight follows the pointer */
+  document.querySelectorAll(".tile").forEach(function (t) {
+    t.addEventListener("pointermove", function (e) {
+      var r = t.getBoundingClientRect();
+      t.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      t.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  });
+
+  /* chair tilts toward the pointer */
+  var stage = document.querySelector(".stage");
+  var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (stage && fine && !calm) {
+    stage.addEventListener("pointermove", function (e) {
+      var r = stage.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      chair.style.transform = "rotateY(" + (x * 14).toFixed(2) + "deg) rotateX(" + (-y * 10).toFixed(2) + "deg)";
+    });
+    stage.addEventListener("pointerleave", function () { chair.style.transform = ""; });
+  }
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
